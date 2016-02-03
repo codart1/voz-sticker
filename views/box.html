@@ -1,0 +1,17 @@
+<div id="voz-sticker-box" class="vs-box">
+	<div ng-controller="MainController">
+
+		<div>
+			<input type="text">
+		</div>
+
+		<div class="row">
+			<div 
+				class="col-xs-3" 
+				ng-repeat="item in data.data">
+				<img src="{{item.images.fixed_width_small.url}}" alt="">
+			</div>
+		</div>
+
+	</div>
+</div>
