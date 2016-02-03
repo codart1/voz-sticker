@@ -10,36 +10,41 @@ function initBox(angular, element) {
 
 	//CONTROLLERS
 	var MainController = [
-		'$http', '$scope', 'GifphyService',
-		function($http, $scope, gifphy) {
-			$scope.greeting = 'Hiiiii';
+		'$scope', 'GifphyService',
+		function($scope, gifphy) {
+			var ip = $scope.inputs = {
+				search: ''
+			};
 
+			$scope.onSearch = function() {
+				gifphy.search(ip.search, 2, function(response) {
+					$scope.data = response.data;
+				});
+			}
 
-			$http.get(
-				'https://api.giphy.com/v1/gifs/search',
-				{
-					params: {
-						q: 'cat',
-						api_key: 'dc6zaTOxFJmzC',
-						limit: '10',
-						offset: '0'
-					}
-				}
-			)
-			.then(function(response) {
-				$scope.data = response.data;
-			});
-
-			gifphy.search();
 		}
 	];
 
 	//SERVICE
 	var GifphyService = [
 		'GIFPHY_API',
-		function(API) {
-			function search() {
-				console.log(API.host);
+		'$http',
+		function(API, $http) {
+			function search(q, page, success, fail) {
+				$http.get(
+					'https://api.giphy.com/v1/gifs/search',
+					{
+						params: {
+							q: q,
+							api_key: 'dc6zaTOxFJmzC',
+							limit: '10',
+							offset: '0'
+						}
+					}
+				)
+				.then(function(response) {
+					success(response);
+				});
 			}
 
 			return {

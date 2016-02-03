@@ -2,7 +2,10 @@
 	<div ng-controller="MainController">
 
 		<div>
-			<input type="text">
+			<input 
+				ng-model="inputs.search" 
+				type="text"
+				ng-change="onSearch()">
 		</div>
 
 		<div class="row">
