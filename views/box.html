@@ -1,18 +1,28 @@
-<div id="voz-sticker-box" class="vs-box">
+<div id="voz-sticker-box" class="vs-box vs-hidden">
 	<div ng-controller="MainController">
 
 		<div>
 			<input 
 				ng-model="inputs.search" 
 				type="text"
-				ng-change="onSearch()">
+				ng-change="onSearch()"
+				class="vs-search-input">
 		</div>
 
-		<div class="row">
+		<div class="row nopad">
 			<div 
-				class="col-xs-3" 
+				class="col-xs-3 vs-item" 
 				ng-repeat="item in data.data">
 				<img src="{{item.images.fixed_width_small.url}}" alt="">
+
+				<div class="vs-cover">
+					<div 
+						class="vs-btn-add"
+						ng-click="addToEditor(item)">
+						<i class="fa fa-plus"></i>
+					</div>
+				</div>
+
 			</div>
 		</div>
 

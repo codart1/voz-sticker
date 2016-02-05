@@ -16,3 +16,81 @@
 
     z-index: 300;
 }
+
+.vs-search-input {
+	width: 100%;
+	box-sizing: border-box;
+	border: none;
+
+    height: 25px;
+    outline: none;
+    padding: 0 10px;
+
+    color: #7D7D7D;
+    border-bottom: 1px solid #C5C5C5;
+}
+
+.vs-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 10px;
+	height: 120px;
+	position: relative;	
+}
+
+.vs-item:hover .vs-cover { display: flex }
+
+.vs-cover {
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	z-index: 301;
+
+	background-color: rgba(0, 0, 0, 0.38);
+
+	display: none;
+	align-items: center;
+	justify-content: center;
+}
+
+.vs-btn-add {
+	display: inline-block;
+	width: 45px; height: 45px;
+	background-color: #0A7ABB;
+
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.vs-btn-add .fa {
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.vs-item:nth-of-type(8n + 6),
+.vs-item:nth-of-type(8n + 8),
+.vs-item:nth-of-type(8n + 1),
+.vs-item:nth-of-type(8n + 3)
+{
+	background-color: #E6E6E6;
+}
+
+/* */
+
+.row.nopad {
+	margin-right: 0; 
+	margin-left: 0; 
+}
+
+.row.nopad [class^=col-] {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.vs-hidden {
+	display: none;
+}

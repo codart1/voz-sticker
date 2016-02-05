@@ -20,6 +20,7 @@
       ],
       "css": [
         "css/flex-grid/flexboxgrid.min.css",
+        "css/font-awesome/css/font-awesome.min.css",
         "src/inject/inject.css"
       ]
     },
@@ -35,5 +36,8 @@
       ]
     }
   ],
-  "web_accessible_resources": ["views/*"]
+  "web_accessible_resources": [
+    "views/*",
+    "css/font-awesome/*"
+  ]
 }

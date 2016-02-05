@@ -1,4 +1,6 @@
-function initBox(angular, element) {
+function initBox(angular, element, other) {
+
+
 	var GIFPHY_API = {
 		host: 'https://api.giphy.com/',
 		apiKey: 'dc6zaTOxFJmzC',
@@ -22,6 +24,10 @@ function initBox(angular, element) {
 				});
 			}
 
+			$scope.addToEditor = function(item) {
+				other.addImgTag(item.images.original.url);
+			}
+
 		}
 	];
 
@@ -31,17 +37,16 @@ function initBox(angular, element) {
 		'$http',
 		function(API, $http) {
 			function search(q, page, success, fail) {
-				$http.get(
-					'https://api.giphy.com/v1/gifs/search',
-					{
-						params: {
-							q: q,
-							api_key: 'dc6zaTOxFJmzC',
-							limit: '10',
-							offset: '0'
-						}
+				var config = {
+					params: {
+						q: q,
+						api_key: API.apiKey,
+						limit: '12',
+						offset: '0'
 					}
-				)
+				};
+
+				$http.get( API.host + API.path.search, config )
 				.then(function(response) {
 					success(response);
 				});
