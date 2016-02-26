@@ -15,7 +15,7 @@ function initBox(angular, element, other) {
 		'$scope', 'GifphyService',
 		function($scope, gifphy) {
 			var ip = $scope.inputs = {
-				search: ''
+				search: 'asd'
 			};
 
 			$scope.onSearch = function() {
