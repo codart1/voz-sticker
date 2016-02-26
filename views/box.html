@@ -1,12 +1,9 @@
 <div id="voz-sticker-box" class="vs-box vs-hidden">
+
+	<div ng-include src="getUrl('views/tab.html') | trusted"></div>
+	
 	<div ng-controller="MainController">
-
-		<div class="vs-tabs">
-			<div class="vs-tabs-item">Tìm kiếm</div>
-			<div class="vs-tabs-item"></div>
-			<div class="vs-tabs-item"></div>
-		</div>
-
+	
 		<div>
 			<input 
 				ng-model="inputs.search" 

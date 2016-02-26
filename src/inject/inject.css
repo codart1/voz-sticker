@@ -94,3 +94,22 @@
 .vs-hidden {
 	display: none;
 }
+
+.vs-tabs {
+	display: flex;
+	background-color: #3485FF;
+}
+
+.vs-tabs-item {
+	padding: 8px 15px;
+	font-size: 13px;
+	color: #A7D6FF;
+	
+	cursor: pointer;
+}
+
+.vs-tabs-item.active {
+	color: white;
+	background-color: #246FE0;
+	font-size: 15px;
+}

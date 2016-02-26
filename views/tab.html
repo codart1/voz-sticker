@@ -1,0 +1,14 @@
+<div ng-controller="TabController">
+	
+<div class="vs-tabs">
+	<div ng-repeat="state in sm.getOrderedState()"
+		 class="vs-tabs-item"
+		 ng-class="{ 'active': state.active }"
+		 ng-click="sm.active(state)">
+		 <i class="fa fa-{{state.faIconName}}"></i>
+		 {{ state.text }}
+	</div>
+	
+</div>
+
+</div>
